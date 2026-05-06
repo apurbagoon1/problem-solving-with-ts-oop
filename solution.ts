@@ -17,5 +17,32 @@ function reverseString (string: string): string {
 // console.log(reverseString("typescript"));
 
 
+// Problem 3
+type StringOrNumber = string | number;
+
+function checkType (value: StringOrNumber): string {
+  if (typeof value === "string") {
+    return "String";
+  } 
+  else 
+    return "Number";
+}
+
+// console.log(checkType("hello")); 
+// console.log(checkType(42)); 
+
+
+// Problem 4
+function getProperty <T, K extends keyof T> (object: T, key: K): T[K] {
+  return object[key];
+}
+
+const user = { 
+    id: 1, 
+    name: "John Doe", 
+    age: 21 
+};
+
+// console.log(getProperty(user, "name"));
 
 
