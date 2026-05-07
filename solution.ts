@@ -68,3 +68,40 @@ const myBook = {
 // console.log(toggleReadStatus(myBook));
 
 
+// Problem 6
+class Person {
+  name: string;
+  age: number;
+
+  constructor (name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+class Student extends Person {
+  grade: string;
+
+  constructor (name: string, age: number, grade: string) {
+    super(name, age);
+    this.grade = grade;
+  }
+
+  getDetails(): string {
+    const Details = `Name: ${this.name}, Age: ${this.age}, Grade: ${this.grade}`;
+    return Details; 
+  }
+}
+
+const student = new Student("Alice", 20, "A");
+
+// console.log(student.getDetails());
+
+
+// Problem 7
+function getIntersection (array1: number[], array2: number[]): number[] {
+    const Intersection = array1.filter(num => array2.includes(num));
+  return Intersection;
+}
+
+console.log(getIntersection([1, 2, 3, 4, 5], [3, 4, 5, 6, 7]));
